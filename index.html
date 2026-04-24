@@ -11,6 +11,14 @@
 </head>
 <body>
 
+<label class="animation-toggle" for="animToggle">
+    <span class="label-text">Lesser Animations</span>
+    <span class="switch">
+        <input type="checkbox" id="animToggle" aria-label="Toggle lesser animations">
+        <span class="slider"></span>
+    </span>
+</label>
+
 <div class="position-relative"
      id="hero"
      style="background-image: url('assets/hero_image.jpg'); background-size: cover; height: 100vh; background-position: center">
@@ -32,9 +40,9 @@
             <div class="img-bg"
                  style="background-image: url('assets/paris.jpg'); background-position: right;"></div>
         </div>
-        <div class="col-md-6 text-col" id="text-right">
+        <div class="col-md-6 text-col" data-side="right">
             <div class="h-100 w-100" style="background-color: rgb(42, 38, 42)">
-                <div id="card-right" class="card-body text-white">
+                <div class="card-body text-white">
                     <h2 class="card-title font-paris m-3">Paris</h2>
                     <p class="fs-5 m-3 font-desc">
                         The city of timeless elegance. From the Eiffel Tower to quiet café-lined
@@ -51,9 +59,9 @@
     <span class="city-name-big font-madrid">Madrid</span>
     <a href="pages/madrid.html" class="stretched-link"></a>
     <div class="row g-0 h-100">
-        <div class="col-md-6 order-2 order-md-1 text-col" id="text-left">
+        <div class="col-md-6 order-2 order-md-1 text-col" data-side="left">
             <div class="h-100 w-100" style="background-color: rgb(42, 38, 42)">
-                <div id="card-left" class="card-body text-white">
+                <div class="card-body text-white">
                     <h2 class="card-title font-madrid m-3">Madrid</h2>
                     <p class="fs-5 m-3 font-desc">
                         The heart of Spanish culture. Madrid offers grand architecture, lively plazas, and a deep
@@ -78,9 +86,9 @@
             <div class="img-bg"
                  style="background-image: url('assets/tokyo.jpg'); background-position: center;"></div>
         </div>
-        <div class="col-md-6 text-col" id="text-right">
+        <div class="col-md-6 text-col" data-side="right">
             <div class="h-100 w-100" style="background-color: rgb(42, 38, 42)">
-                <div id="card-right" class="card-body text-white">
+                <div class="card-body text-white">
                     <h2 class="card-title font-tokyo m-3">Tokyo</h2>
                     <p class="fs-5 m-3 font-desc">
                         Where ancient temples meet neon-lit streets. Tokyo is a city of contrasts —
@@ -97,9 +105,9 @@
     <span class="city-name-big font-istanbul">İstanbul</span>
     <a href="pages/istanbul.html" class="stretched-link"></a>
     <div class="row g-0 h-100">
-        <div class="col-md-6 order-2 order-md-1 text-col" id="text-left">
+        <div class="col-md-6 order-2 order-md-1 text-col" data-side="left">
             <div class="h-100 w-100" style="background-color: rgb(42, 38, 42)">
-                <div id="card-left" class="card-body text-white">
+                <div class="card-body text-white">
                     <h2 class="card-title font-istanbul m-3">Istanbul</h2>
                     <p class="fs-5 m-3 font-desc">
                         The only city spanning two continents. Istanbul carries millennia of Byzantine
@@ -124,9 +132,9 @@
             <div class="img-bg"
                  style="background-image: url('assets/lisbon.jpg'); background-position: center;"></div>
         </div>
-        <div class="col-md-6 text-col" id="text-right">
+        <div class="col-md-6 text-col" data-side="right">
             <div class="h-100 w-100" style="background-color: rgb(42, 38, 42)">
-                <div id="card-right" class="card-body text-white">
+                <div class="card-body text-white">
                     <h2 class="card-title font-lisbon m-3">Lisbon</h2>
                     <p class="fs-5 m-3 font-desc">
                         Europe's sunniest capital, draped across seven hills above the Tagus River.
@@ -144,6 +152,11 @@
     window.addEventListener('scroll', () => {
         hero.style.backgroundPositionY = `calc(center + ${window.pageYOffset * 0.35}px)`;
     }, { passive: true });
+
+    const animToggle = document.getElementById('animToggle');
+    animToggle.addEventListener('change', () => {
+        document.body.classList.toggle('less-animations', animToggle.checked);
+    });
 </script>
 </body>
 </html>

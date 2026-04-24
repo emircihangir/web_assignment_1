@@ -130,19 +130,19 @@
     width: 100%;
 }
 
-#text-right .card-body {
+[data-side="right"] .card-body {
     opacity: 0;
     transform: translateX(80px);
     transition: opacity 0.1s ease, transform 0.1s ease;
 }
-#text-left .card-body {
+[data-side="left"] .card-body {
     opacity: 0;
     transform: translateX(-80px);
     transition: opacity 0.1s ease, transform 0.1s ease;
     text-align: right;
 }
-.city-card:hover #text-right .card-body,
-.city-card:hover #text-left .card-body {
+.city-card:hover [data-side="right"] .card-body,
+.city-card:hover [data-side="left"] .card-body {
     opacity: 1;
     transform: translateX(0);
     transition: opacity 0.45s ease 0.3s, transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s;
@@ -151,4 +151,158 @@
 @keyframes fadeUp {
     from { opacity: 0; transform: translateY(24px); }
     to   { opacity: 1; transform: translateY(0);    }
+}
+
+.animation-toggle {
+    position: fixed;
+    top: 1.25rem;
+    right: 1.5rem;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    padding: 0.45rem 0.9rem;
+    background: rgba(42, 38, 42, 0.55);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    border-radius: 999px;
+    color: rgba(255, 255, 255, 0.88);
+    font-family: 'EB Garamond', serif;
+    font-size: 0.72rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    user-select: none;
+    cursor: pointer;
+    margin: 0;
+    opacity: 0;
+    animation: fadeUp 0.6s ease 1.4s forwards;
+}
+
+.animation-toggle label {
+    cursor: pointer;
+    margin: 0;
+    line-height: 1;
+}
+
+.animation-toggle .switch {
+    position: relative;
+    width: 34px;
+    height: 18px;
+    display: inline-block;
+    flex-shrink: 0;
+}
+
+.animation-toggle .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+}
+
+.animation-toggle .slider {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(255, 255, 255, 0.18);
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.animation-toggle .slider::before {
+    content: '';
+    position: absolute;
+    height: 14px;
+    width: 14px;
+    left: 2px;
+    top: 2px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.animation-toggle input:checked + .slider {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.animation-toggle input:checked + .slider::before {
+    transform: translateX(16px);
+}
+
+.animation-toggle input:focus-visible + .slider {
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.35);
+}
+
+.less-animations .city-card {
+    cursor: default;
+}
+
+.less-animations .city-name-big {
+    opacity: 0;
+    transform: scale(0.85);
+    transition: none;
+}
+
+.less-animations .img-col,
+.less-animations .img-col.from-right {
+    clip-path: inset(0 0 0 0) !important;
+    transition: none;
+}
+
+.less-animations .img-bg {
+    transform: none !important;
+    transition: none;
+}
+
+.less-animations [data-side="right"] .card-body,
+.less-animations [data-side="left"] .card-body {
+    opacity: 1;
+    transform: translateX(0);
+    transition: none;
+}
+
+
+@media (max-width: 768px) {
+    .animation-toggle {
+        display: none !important;
+    }
+
+    .city-card {
+        cursor: default;
+        min-height: auto;
+    }
+
+    .city-name-big {
+        display: none;
+    }
+
+    .img-col,
+    .img-col.from-right {
+        clip-path: inset(0 0 0 0) !important;
+        transition: none;
+        min-height: 42vh;
+    }
+
+    .img-bg {
+        min-height: 42vh;
+        transform: none !important;
+        transition: none;
+    }
+
+    [data-side="right"] .card-body,
+    [data-side="left"] .card-body {
+        opacity: 1;
+        transform: translateX(0);
+        transition: none;
+        text-align: left;
+    }
+
+    .city-card:hover .city-name-big,
+    .city-card:hover .img-col,
+    .city-card:hover .img-bg,
+    .city-card:hover [data-side="right"] .card-body,
+    .city-card:hover [data-side="left"] .card-body {
+        transform: none;
+        transition: none;
+    }
 }
