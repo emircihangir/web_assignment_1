@@ -1,15 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Madrid</title>
-
     <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/city.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="container p-3 mt-3" style="max-width: 700px; height: 100vh">
-    <img src="../assets/madrid.jpg" alt="" class="w-100 h-auto rounded-top-4">
+
+<a href="../index.html" class="back-btn">← Back</a>
+
+<button class="theme-toggle" onclick="toggleTheme()">
+    <span>☀️</span> Light Mode
+</button>
+
+<div class="container mt-3" style="max-width: 700px;">
+    <img src="../assets/madrid.jpg" alt="Madrid" class="w-100 h-auto" style="display:block;">
+    <div class="container-inner">
     <br><br>
     <h1>Madrid</h1>
     <p>
@@ -18,7 +28,7 @@
         rhythm of life that extends well into the night.
     </p>
 
-    <br>
+    <hr>
     <h4>Why visit Madrid</h4>
     <p>
         Madrid offers a balance between tradition and modernity. It is a city where you can explore world-class art,
@@ -31,45 +41,40 @@
         <li>Famous food culture with tapas and local cuisine</li>
     </ul>
 
-    <br>
+    <hr>
     <h4>Landmarks and architecture</h4>
     <p>
         The city is filled with impressive landmarks that reflect both royal history and urban development. Many of
         these locations are central gathering points for locals and visitors.
     </p>
     <ul>
-        <li>Royal Palace of Madrid – One of the largest royal palaces in Europe, known for its scale
-            and detailed interiors.
-        </li>
-        <li>Plaza Mayor – A historic square surrounded by uniform buildings and often filled with
-            activity.
-        </li>
+        <li>Royal Palace of Madrid – One of the largest royal palaces in Europe, known for its scale and detailed interiors.</li>
+        <li>Plaza Mayor – A historic square surrounded by uniform buildings and often filled with activity.</li>
         <li>Puerta del Sol – The symbolic center of Madrid and a major meeting point.</li>
         <li>Gran Vía – A major street known for shopping, theaters, and architecture.</li>
     </ul>
 
-    <br>
+    <hr>
     <h4>Neighborhoods</h4>
     <p>
         Madrid is composed of districts that each offer a different experience. Exploring these areas reveals the
         diversity of the city.
     </p>
     <ul>
-        <li>Malasaña – A creative and youthful area known for its alternative culture and nightlife.
-        </li>
+        <li>Malasaña – A creative and youthful area known for its alternative culture and nightlife.</li>
         <li>La Latina – Famous for its tapas bars and relaxed social atmosphere.</li>
         <li>Salamanca – A more upscale district with elegant streets and shopping.</li>
     </ul>
 
-    <br>
+    <hr>
     <h4>Art and culture</h4>
     <p>
-        Madrid is home to some of the most important art collections in the world. The city’s museums showcase works
+        Madrid is home to some of the most important art collections in the world. The city's museums showcase works
         from major European artists and attract visitors interested in cultural heritage. Beyond museums, Madrid also
         offers theaters, music venues, and frequent public events.
     </p>
 
-    <br>
+    <hr>
     <h4>Food and everyday life</h4>
     <p>
         Food plays a central role in Madrid. The culture of tapas allows people to share small dishes in a social
@@ -77,14 +82,14 @@
         into the night. Markets and traditional restaurants offer a wide variety of local specialties.
     </p>
 
-    <br>
+    <hr>
     <h4>Atmosphere</h4>
     <p>
         Madrid has a warm and social atmosphere. Public spaces are often full, and daily life happens outdoors in
         plazas and streets. The city feels open and welcoming, with a strong emphasis on community and interaction.
     </p>
 
-    <br>
+    <hr>
     <h4>When to visit</h4>
     <ul>
         <li>Spring – Pleasant weather and active city life</li>
@@ -92,14 +97,16 @@
         <li>Summer – Very hot, but lively evenings and events</li>
     </ul>
 
-    <br>
+    <hr>
     <h4>Summary</h4>
     <p>
         Madrid is a city that combines history, culture, and a vibrant social life. It is ideal for visitors who want
         to experience authentic Spanish traditions alongside a modern urban environment.
     </p>
-
     <br><br>
+    </div>
 </div>
+
+<script src="../js/theme.js"></script>
 </body>
 </html>

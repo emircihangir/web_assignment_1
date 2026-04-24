@@ -1,15 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Paris</title>
-
     <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/city.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,700;1,400&family=EB+Garamond:wght@400;500&display=swap" rel="stylesheet">
 </head>
 <body>
-<div class="container p-3 mt-3" style="max-width: 700px; height: 100vh">
-    <img src="../assets/paris.jpg" alt="" class="w-100 h-auto rounded-top-4">
+
+<a href="../index.html" class="back-btn">← Back</a>
+
+<button class="theme-toggle" onclick="toggleTheme()">
+    <span id="theme-icon">☀️</span> Light Mode
+</button>
+
+<div class="container mt-3" style="max-width: 700px;">
+    <img src="../assets/paris.jpg" alt="Paris" class="w-100 h-auto" style="display:block;">
+    <div class="container-inner">
     <br><br>
     <h1>Paris</h1>
     <p>
@@ -18,7 +28,7 @@
         eating well, and observing the city.
     </p>
 
-    <br>
+    <hr>
     <h4>Why visit Paris</h4>
     <p>
         Paris offers a rare combination of world-famous art, iconic landmarks, and a strong café culture. It is not
@@ -31,42 +41,32 @@
         <li>A relaxed lifestyle centered around cafés and food</li>
     </ul>
 
-    <br>
+    <hr>
     <h4>Landmarks and architecture</h4>
     <p>
         The city is filled with structures that are instantly recognizable. Many of them are not only visually
         impressive but also historically important.
     </p>
     <ul>
-        <li>Eiffel Tower – The most recognizable symbol of Paris, impressive both during the day
-            and when illuminated at night.
-        </li>
-        <li>Louvre Museum – One of the largest museums in the world, known for its vast collection
-            and its iconic glass pyramid.
-        </li>
-        <li>Notre-Dame Cathedral – A central example of Gothic architecture located on the Île de
-            la Cité.
-        </li>
-        <li>Arc de Triomphe – A monumental arch offering panoramic views of the city from the top.
-        </li>
+        <li>Eiffel Tower – The most recognizable symbol of Paris, impressive both during the day and when illuminated at night.</li>
+        <li>Louvre Museum – One of the largest museums in the world, known for its vast collection and its iconic glass pyramid.</li>
+        <li>Notre-Dame Cathedral – A central example of Gothic architecture located on the Île de la Cité.</li>
+        <li>Arc de Triomphe – A monumental arch offering panoramic views of the city from the top.</li>
     </ul>
 
-    <br>
+    <hr>
     <h4>Neighborhoods</h4>
     <p>
         Paris is divided into districts that each have their own character. Exploring these areas is one of the most
         rewarding parts of visiting the city.
     </p>
     <ul>
-        <li>Montmartre – A hilltop area with an artistic past and narrow streets that feel like a
-            small village.
-        </li>
-        <li>Le Marais – A lively district combining historic buildings, shops, and modern culture.
-        </li>
+        <li>Montmartre – A hilltop area with an artistic past and narrow streets that feel like a small village.</li>
+        <li>Le Marais – A lively district combining historic buildings, shops, and modern culture.</li>
         <li>Saint-Germain-des-Prés – Known for its cafés and intellectual history.</li>
     </ul>
 
-    <br>
+    <hr>
     <h4>Art and culture</h4>
     <p>
         Paris has long been a global center for art. Many important artistic movements developed here, and the city
@@ -74,22 +74,21 @@
         street art also contribute to the creative atmosphere.
     </p>
 
-    <br>
+    <hr>
     <h4>Food and everyday life</h4>
     <p>
         Food is an essential part of life in Paris. Bakeries, cafés, and local markets are present throughout the
-        city. Meals are often slower and more social. Sitting at a café and observing daily life is a common
-        experience.
+        city. Meals are often slower and more social. Sitting at a café and observing daily life is a common experience.
     </p>
 
-    <br>
+    <hr>
     <h4>Atmosphere</h4>
     <p>
         The overall design of Paris creates a consistent and recognizable environment. Wide boulevards, uniform
         buildings, and views along the Seine river make the city easy to navigate and visually cohesive.
     </p>
 
-    <br>
+    <hr>
     <h4>When to visit</h4>
     <ul>
         <li>Spring and early summer – Mild weather and active streets</li>
@@ -97,14 +96,16 @@
         <li>Winter – Fewer tourists but colder conditions</li>
     </ul>
 
-    <br>
+    <hr>
     <h4>Summary</h4>
     <p>
         Paris is best experienced slowly. It is a city where architecture, culture, and daily life are closely
         connected. It appeals to visitors who value art, history, food, and atmosphere.
     </p>
-
     <br><br>
+    </div>
 </div>
+
+<script src="../js/theme.js"></script>
 </body>
 </html>

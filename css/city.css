@@ -1,0 +1,98 @@
+:root[data-theme="dark"] {
+    --bg:         rgb(28, 25, 28);
+    --container:  rgb(42, 38, 42);
+    --text:       #e8e0d4;
+    --text-muted: rgba(232,224,212,0.6);
+    --heading:    #ffffff;
+    --border:     rgba(255,255,255,0.08);
+    --btn-bg:     rgba(255,255,255,0.1);
+    --btn-color:  #e8e0d4;
+    --btn-border: rgba(255,255,255,0.2);
+}
+:root[data-theme="light"] {
+    --bg:         #f0ebe4;
+    --container:  #ffffff;
+    --text:       #2a2628;
+    --text-muted: rgba(42,38,42,0.6);
+    --heading:    #1a1618;
+    --border:     rgba(0,0,0,0.08);
+    --btn-bg:     rgba(0,0,0,0.07);
+    --btn-color:  #2a2628;
+    --btn-border: rgba(0,0,0,0.15);
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    font-family: 'EB Garamond', serif;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    transition: background-color 0.35s ease, color 0.35s ease;
+}
+
+.container {
+    background-color: var(--container);
+    border-radius: 1rem;
+    overflow: hidden;
+    padding: 0 !important;
+    transition: background-color 0.35s ease;
+}
+
+.container-inner {
+    padding: 1rem;
+}
+
+p, li { color: var(--text); }
+ul { padding-left: 1.2rem; }
+hr { border-color: var(--border); margin: 1.5rem 0; }
+
+.theme-toggle {
+    position: fixed;
+    top: 1.2rem;
+    right: 1.5rem;
+    z-index: 999;
+    background: var(--btn-bg);
+    color: var(--btn-color);
+    border: 1px solid var(--btn-border);
+    border-radius: 2rem;
+    padding: 0.4rem 1rem;
+    font-family: 'EB Garamond', serif;
+    font-size: 0.95rem;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    transition: background 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+.theme-toggle:hover { background: var(--btn-border); }
+
+.back-btn {
+    position: fixed;
+    top: 1.2rem;
+    left: 1.5rem;
+    z-index: 999;
+    background: rgba(255,255,255,0.1);
+    color: #e8e0d4;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 2rem;
+    padding: 0.4rem 1rem;
+    font-family: 'EB Garamond', serif;
+    font-size: 0.95rem;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+    text-decoration: none;
+    display: inline-block;
+    transition: background 0.3s ease;
+}
+.back-btn:hover {
+    background: rgba(255,255,255,0.2);
+    color: #e8e0d4;
+    text-decoration: none;
+}
+[data-theme="light"] .back-btn {
+    background: rgba(0,0,0,0.07);
+    color: #2a2628;
+    border-color: rgba(0,0,0,0.15);
+}
+[data-theme="light"] .back-btn:hover {
+    background: rgba(0,0,0,0.14);
+    color: #2a2628;
+}

@@ -1,0 +1,154 @@
+.hero-eyebrow {
+    font-size: 0.78rem;
+    letter-spacing: 0.45em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.6);
+    opacity: 0;
+    animation: fadeUp 0.9s ease 0.4s forwards;
+    margin-bottom: 0.6rem;
+}
+
+.hero-title {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(3.5rem, 7vw, 7rem);
+    font-weight: 700;
+    line-height: 1.05;
+    opacity: 0;
+    animation: fadeUp 1s ease 0.7s forwards;
+    margin-bottom: 2.5rem;
+}
+
+.scroll-arrow {
+    opacity: 0;
+    animation: fadeUp 0.8s ease 1.2s forwards;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.scroll-arrow.visible {
+    opacity: 1;
+}
+
+.scroll-arrow span {
+    font-size: 0.68rem;
+    letter-spacing: 0.35em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.5);
+}
+
+.arrow-icon {
+    width: 28px;
+    height: 28px;
+    border-right: 2px solid rgba(255,255,255,0.6);
+    border-bottom: 2px solid rgba(255,255,255,0.6);
+    transform: rotate(45deg);
+}
+
+.arrow-bounce {
+    animation: bounceDown 1.4s ease infinite;
+}
+
+@keyframes bounceDown {
+    0%, 100% { transform: translateY(0);   opacity: 1;   }
+    50%       { transform: translateY(8px); opacity: 0.5; }
+}
+
+.city-card {
+    position: relative;
+    background-color: rgb(42, 38, 42);
+    overflow: hidden;
+    min-height: 50vh;
+    cursor: pointer;
+}
+
+.city-name-big {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: clamp(4rem, 9vw, 7rem);
+    z-index: 3;
+    pointer-events: none;
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.city-card:hover .city-name-big {
+    opacity: 0;
+    transform: scale(0.85);
+    transition: opacity 0.45s ease, transform 0.45s ease;
+}
+
+.font-paris    { font-family: 'Bodoni Moda', serif;      font-weight: 700; letter-spacing: 0.04em;  }
+.font-madrid   { font-family: 'Abril Fatface', cursive;  font-weight: 400; letter-spacing: -0.01em; }
+.font-tokyo    { font-family: 'Shippori Mincho', serif;  font-weight: 700; letter-spacing: 0.06em;  }
+.font-istanbul { font-family: 'Cinzel', serif;           font-weight: 700; letter-spacing: 0.08em;  }
+.font-lisbon   { font-family: 'Lora', serif;             font-weight: 700; letter-spacing: 0.01em;  }
+.font-desc     { font-family: 'EB Garamond', serif !important; font-size: 1.55rem !important; line-height: 1.8 !important; }
+
+.city-card .card-title {
+    font-size: 2.8rem;
+}
+
+.img-col {
+    overflow: hidden;
+    min-height: 50vh;
+    clip-path: inset(0 100% 0 0);
+    transition: clip-path 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.img-col.from-right {
+    clip-path: inset(0 0 0 100%);
+}
+.city-card:hover .img-col {
+    clip-path: inset(0 0 0 0) !important;
+}
+
+.img-bg {
+    height: 100%;
+    min-height: 50vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    transition: transform 1.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.city-card:hover .img-bg {
+    transform: scale(1.05);
+}
+
+.text-col {
+    display: flex;
+    align-items: center;
+}
+.text-col > div {
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+#text-right .card-body {
+    opacity: 0;
+    transform: translateX(80px);
+    transition: opacity 0.1s ease, transform 0.1s ease;
+}
+#text-left .card-body {
+    opacity: 0;
+    transform: translateX(-80px);
+    transition: opacity 0.1s ease, transform 0.1s ease;
+    text-align: right;
+}
+.city-card:hover #text-right .card-body,
+.city-card:hover #text-left .card-body {
+    opacity: 1;
+    transform: translateX(0);
+    transition: opacity 0.45s ease 0.3s, transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) 0.25s;
+}
+
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0);    }
+}
